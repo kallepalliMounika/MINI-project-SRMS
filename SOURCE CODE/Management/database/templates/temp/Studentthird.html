@@ -1,0 +1,33 @@
+{% extends "main.html" %}
+
+{% block content %}
+{% load static %}
+<br>
+<a href= "/"><img src="{% static '/Image/Logouticon.jfif' %}" style="width:40px;height:40px; margin-left: 100%"></a><br>
+  <a href="javascript:history.go(-1)"><img src="{% static '/Image/Backicon.png' %}" style="width:40px;height:40px;margin-top: -70px"></a><br>
+<div class="container">
+  <div class="row border-right">
+    <div class="col">
+      <br>
+      <h3>SEMESTERS</h3>
+        <nav class="nav flex-column" style="margin-left: 30px; font-size:250%;">
+        <a class="nav-link active" href="/Student/{{Roll_Number}}/Attendance/Semester/1/{{Group}}/">1</a>
+      <a class="nav-link" href="/Student/{{Roll_Number}}/Attendance/Semester/2/{{Group}}/">2</a>
+      <a class="nav-link" href="/Student/{{Roll_Number}}/Attendance/Semester/3/{{Group}}/">3</a>
+      <a class="nav-link" href="/Student/{{Roll_Number}}/Attendance/Semester/4/{{Group}}/">4</a>
+      <a class="nav-link" href="/Student/{{Roll_Number}}/Attendance/Semester/5/{{Group}}/">5</a>
+      <a class="nav-link" href="/Student/{{Roll_Number}}/Attendance/Semester/6/{{Group}}/">6</a>
+    </nav>
+    </div>
+    <div class="col-9">
+      <br>
+      <h5>{{Semester}}</h5>
+      {{no}}
+</table>
+    </div>
+   </div>
+</div>
+
+<br>
+
+{% endblock %}

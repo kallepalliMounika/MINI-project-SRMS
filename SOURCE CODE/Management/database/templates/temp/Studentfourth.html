@@ -1,0 +1,34 @@
+{% extends "main.html" %}
+
+{% block content %}
+{% load static %}
+<br>
+<a href= "/"><img src="{% static '/Image/Logouticon.jfif' %}" style="width:40px;height:40px; margin-left: 100%"></a><br>
+  <a href="javascript:history.go(-1)"><img src="{% static '/Image/Backicon.png' %}" style="width:40px;height:40px;margin-top: -70px"></a><br>
+<div class="container">
+<b><LABEL style = 'margin-left: 40px'>TOTAL WORKING DAYS :</LABEL></b>
+<input type = 'text' value = '{{T_W}}' readonly="">
+<b><LABEL style = 'margin-left: 30px'>ATTENDED CLASSES :</LABEL></b>
+<input type = 'text' value = '{{T_P}}' readonly="">
+<b><LABEL style = 'margin-left: 30px'>ABSENT CLASSES :</LABEL></b>
+<input type = 'text' value = '{{T_A}}' readonly="">
+<br><br>
+<table class="table" style="position: center; width: 80%; margin-left: 100px;">
+  <thead><tr>
+    <th scope="col">#</th>
+    <th scope="col">DATE OF ATTENDANCE</th>
+    <th scope="col">ATTENDANCE</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for student in Attendance %}
+    <tr>
+    <th scope="row">{{forloop.counter}}</th>
+    <td>{{student.Date_Time_Original.date}}</td>
+    <td><input type = 'text' id = "{{student.Roll_Number_Attendance.Roll_Number}}" name = "{{student.Roll_Number_Attendance.Roll_Number}}" class="btn btn-primary active" readonly ='' value = '{{student.Attendance_Date}}'></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
+</div>
